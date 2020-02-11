@@ -17,6 +17,11 @@ server:
   port: 8101
   
 eureka:
+  instance:
+     #使用IP进行注册,不使用主机名注册
+    prefer-ip-address: true  
+     #配置界面列表中显示的格式
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}       
   client:
     service-url:
              #部署地点信息
